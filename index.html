@@ -14,7 +14,7 @@
   --primary:#ffffff;
   --secondary:#f284b0;
   --accent:#7f032f;
-  --text:#312e2e;
+  --text:#080707;
 }
 body{
   font-family:'Poppins', sans-serif;
@@ -64,24 +64,32 @@ nav ul li a:hover{color: var(--accent);}
 /* Hero */
 .hero {
   position: relative;
-  min-height: 100vh; /* cobre toda a tela */
-  background: url("Imagens/backgroundcat.jpg") center center / cover no-repeat;
+  min-height: 70vh;
+  background: url("Imagens/backgroundgato.png") center center / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px; /* só lateral, sem cortar em cima */
-  color:#0b0b0bd3;
+  color: #000000d3;
+  overflow: hidden; 
 }
-.hero-content{
-  position:relative;
-  z-index:2;
-  background: rgba(255, 255, 255, 0);
-  padding: 0px 0px;
-  border-radius: 100px;
-  backdrop-filter: blur(0px);
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit; 
+  filter: blur(0.7px); 
+  transform: scale(1.1);
+  z-index: 1;
 }
-.hero h2{font-size:2.8rem; margin-bottom:15px; color:#a01f4a; text-shadow:1px 1px 5px #090101;}
+
+.hero-content {
+  position: relative;
+  z-index: 5; 
+}
+
+.hero h2{font-size:3.8rem; margin-bottom:15px; color:#94093c; text-shadow:9px 5px 9px #bebdbd;}
 
 /* leve animação de flutuar */
 @keyframes flutuar{
@@ -410,7 +418,7 @@ footer{
 <header>
   <div class="header-container">
     <div class="logo">
-      <img src="Imagens/kitty.png" alt="Logo Gato de Açúcar">
+      <img src="Imagens/pet-care.png" alt="Logo Gato de Açúcar">
       <h1>Gato de Açúcar</h1>
 
     </div>
@@ -430,7 +438,7 @@ footer{
 
 <section class="hero" id="home">
   <div class="hero-content">
-    <h2>🐾 Feito com carinho e muitos ronrons</h2>
+    <h2>Feito com carinho e muitos ronrons</h2>
     <p>Doces que derretem o coração </p>
     <p> e um pouquinho de miau.</p>
     
